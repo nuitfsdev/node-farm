@@ -33,6 +33,7 @@ const replaceTemplate = require('./modules/replaceTemplate');
 
 /////////////////////////////////
 // SERVER
+const PORT=process.env.PORT || 8000
 const tempOverview = fs.readFileSync(
   `${__dirname}/templates/template-overview.html`,
   'utf-8'
@@ -91,6 +92,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(8000, () => {
+server.listen(PORT, () => {
   console.log('Listening to requests on port 8000');
 });
